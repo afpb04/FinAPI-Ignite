@@ -1,5 +1,6 @@
 import { AppError } from "../../../../shared/errors/AppError";
 import { InMemoryUsersRepository } from "../../repositories/in-memory/InMemoryUsersRepository";
+import { CreateUserError } from "./CreateUserError";
 import { CreateUserUseCase } from "./CreateUserUseCase";
 
 
@@ -33,7 +34,7 @@ describe('Create User', () => {
         email: 'admin@finapi.com.br',
         password: 'admin'
       });
-    }).rejects.toBeInstanceOf(AppError);
+    }).rejects.toBeInstanceOf(CreateUserError);
   });
 
 
